@@ -34,8 +34,7 @@ def saveform(request):
         contactEmail = request.POST.get('contactEmail')
         contactSubject = request.POST.get('contactSubject')
         contactMessage = request.POST.get('contactMessage')
-        
-        data = saveforms(
+        data = saveforms()
         contactName=contactName, 
         contactEmail=contactEmail, 
         contactSubject=contactSubject, 
