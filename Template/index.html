@@ -31,6 +31,9 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      flex-wrap: wrap; /* Added flex-wrap to wrap the icons */
+      max-width: 800px; /* Added max-width to limit container width */
+      margin-top: 20px; /* Added margin for spacing */
     }
     
     .icon {
@@ -123,7 +126,8 @@
       border-radius: 50px;
       border: none;
       font-size: 16px;
-      width: 600px;
+      width: 90%; /* Updated width to be responsive */
+      max-width: 600px; /* Added max-width to limit input width */
     }
     
     .search-bar input:focus {
@@ -148,9 +152,15 @@
 </head>
 <body>
   <!-- Navbar -->
-  <div class="navbar navbar-right">
+  <div class="navbar">
     <a href="#" id="brokerage-link">No Brokerage on <span id="swap-text">PGs | Flat | Offices | Shops</span></a>
-    <a href="#">About us | Services | Blogs | Login | Sign up</a>
+    <div id="navbar-links">
+      <a href="#">About us</a>
+      <a href="#">Services</a>
+      <a href="#">Blogs</a>
+      <a href="#">Login</a>
+      <a href="#">Sign up</a>
+    </div>
   </div>
   
   <!-- Main Content -->
@@ -182,7 +192,7 @@
     <input type="text" placeholder="Search...">
   </div>
   <script>
-    // JavaScript code
+    // JavaScript code for swapping text
     document.addEventListener('DOMContentLoaded', function() {
       const swapText = document.getElementById('swap-text');
       const words = swapText.innerText.split(' | ');
@@ -203,8 +213,8 @@
       }, 1000);
     });
 
-     // JavaScript code
-     document.addEventListener('DOMContentLoaded', function() {
+    // JavaScript code for navbar links
+    document.addEventListener('DOMContentLoaded', function() {
       const navbarLinks = document.getElementById('navbar-links');
       const words = navbarLinks.innerText.split(' | ');
 
