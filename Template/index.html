@@ -31,9 +31,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      flex-wrap: wrap; /* Added flex-wrap to wrap the icons */
-      max-width: 800px; /* Added max-width to limit container width */
-      margin-top: 20px; /* Added margin for spacing */
+      flex-wrap: wrap; /* Allow icons to wrap on smaller screens */
     }
     
     .icon {
@@ -126,8 +124,7 @@
       border-radius: 50px;
       border: none;
       font-size: 16px;
-      width: 90%; /* Updated width to be responsive */
-      max-width: 600px; /* Added max-width to limit input width */
+      width: 600px;
     }
     
     .search-bar input:focus {
@@ -148,19 +145,25 @@
         transform: translateY(0);
       }
     }
+    
+    /* Media queries for responsiveness */
+    @media (max-width: 768px) {
+      .icon-container {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .search-bar input {
+        width: 80%;
+      }
+    }
   </style>
 </head>
 <body>
   <!-- Navbar -->
-  <div class="navbar">
+  <div class="navbar navbar-right">
     <a href="#" id="brokerage-link">No Brokerage on <span id="swap-text">PGs | Flat | Offices | Shops</span></a>
-    <div id="navbar-links">
-      <a href="#">About us</a>
-      <a href="#">Services</a>
-      <a href="#">Blogs</a>
-      <a href="#">Login</a>
-      <a href="#">Sign up</a>
-    </div>
+    <a href="#">About us | Services | Blogs | Login | Sign up</a>
   </div>
   
   <!-- Main Content -->
@@ -192,7 +195,7 @@
     <input type="text" placeholder="Search...">
   </div>
   <script>
-    // JavaScript code for swapping text
+    // JavaScript code
     document.addEventListener('DOMContentLoaded', function() {
       const swapText = document.getElementById('swap-text');
       const words = swapText.innerText.split(' | ');
@@ -211,30 +214,6 @@
 
         currentWordIndex = (currentWordIndex + 1) % words.length;
       }, 1000);
-    });
-
-    // JavaScript code for navbar links
-    document.addEventListener('DOMContentLoaded', function() {
-      const navbarLinks = document.getElementById('navbar-links');
-      const words = navbarLinks.innerText.split(' | ');
-
-      navbarLinks.innerHTML = words
-        .map((word) => {
-          return `<span>${word}</span>`;
-        })
-        .join(' | ');
-
-      const wordSpans = Array.from(navbarLinks.getElementsByTagName('span'));
-
-      wordSpans.forEach((span) => {
-        span.addEventListener('mouseover', function() {
-          this.style.color = 'yellow';
-        });
-
-        span.addEventListener('mouseout', function() {
-          this.style.color = '';
-        });
-      });
     });
   </script>
 </body>
