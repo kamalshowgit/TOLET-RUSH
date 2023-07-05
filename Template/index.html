@@ -1,223 +1,231 @@
 <!DOCTYPE html>
-<!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]-->
-<!--[if IE 8 ]><html class="no-js ie ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 8)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<html>
 <head>
-
-   <!--- Basic Page Needs
-   ================================================== -->
-   <meta charset="utf-8">
-	<title>TO-LET</title>
-	<meta name="description" content="">
-	<meta name="author" content="">
-
-   <!-- Mobile Specific Metas
-   ================================================== -->
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-	<!-- CSS
-    ================================================== -->
-   <link rel="stylesheet" href="/static/css/default.css">
-	<link rel="stylesheet" href="/static/css/layout.css">
-   <link rel="stylesheet" href="/static/css/media-queries.css">
-   <link rel="stylesheet" href="/static/css/magnific-popup.css">
-   <link rel="stylesheet" href="/static/css/style.css">
-
-   <!-- Script
-   ================================================== -->
-	<script src="/static/js/modernizr.js"></script>
-   <script src="static/js/revbox.js"></script>
-
-   <!-- Favicons
-	================================================== -->
-	<link rel="shortcut icon" href="/static/12.png" >
-
+  <title>TOLET Globe</title>
+  <style>
+    body {
+      background-color: black;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100vh;
+    }
+    
+    .company-icon {
+      width: 170px;
+      height: 170px;
+      margin-bottom: 20px;
+      background-image: url('/static/images/1.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      border-radius: 50%;
+    }
+    
+    .icon-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .icon {
+      position: relative;
+      width: 250px;
+      height: 250px;
+      margin: 10px;
+      border-radius: 50%;
+      overflow: hidden;
+    }
+    
+    .icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.5;
+      transition: opacity 0.3s ease;
+    }
+    
+    .icon:hover img {
+      opacity: 1;
+    }
+    
+    .icon-title {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: black;
+      font-size: 45px; /* Updated font size */
+      font-weight: bold;
+      text-align: center;
+      transition: color 0.3s ease;
+    }
+    
+    .icon:hover .icon-title {
+      color: yellow;
+    }
+    
+    #apartment {
+      background-image: url('/static/images/appartment.jpg');
+    }
+    
+    #office {
+      background-image: url('/static/images/office.webp');
+    }
+    
+    #godowns {
+      background-image: url('/static/images/godown.jpg');
+    }
+    
+    #pgs {
+      background-image: url('/static/images/pgs.jpg');
+    }
+    
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #333;
+      padding: 10px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+    
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      margin: 8px;
+      font-size: 20px;
+    }
+    
+    .search-bar {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: #333;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: height 0.3s ease;
+      z-index: 999;
+    }
+    
+    .search-bar input {
+      padding: 10px;
+      border-radius: 50px;
+      border: none;
+      font-size: 16px;
+      width: 600px;
+    }
+    
+    .search-bar input:focus {
+      outline: none;
+    }
+    
+    .search-bar .search-icon {
+      color: white;
+      font-size: 20px;
+      margin-left: 10px;
+    }
+    
+    @keyframes searchAnimation {
+      0% {
+        transform: translateY(100%);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+  </style>
 </head>
-
 <body>
-
-   <!-- Header
-   ================================================== -->
-   <header id="home">
-
-      <nav id="nav-wrap">
-
-         <a class="mobile-btn" href="#nav-wrap" title="Show navigation">Show navigation</a>
-	      <a class="mobile-btn" href="#" title="Hide navigation">Hide navigation</a>
-
-         <ul id="nav" class="nav">
-            <li class="current"><a class="smoothscroll" href="#home">Home</a></li>
-            <li><a class="smoothscroll" href="#about">About</a></li>
-	         {% comment %} <li><a class="smoothscroll" href="#resume">Resume</a></li> {% endcomment %}
-            {% comment %} <li><a class="smoothscroll" href="#portfolio">My Photos</a></li> {% endcomment %}
-            {% comment %} <li><a class="smoothscroll" href="#testimonials">Testimonials</a></li> {% endcomment %}
-            <li><a class="smoothscroll" href="#contact">Contact</a></li>
-         </ul> <!-- end #nav -->
-
-      </nav> <!-- end #nav-wrap -->
-      
-   <div class="row banner">
-         <div class="banner-text">
-            <h1 class="responsive-headline">TO-LET </h1>
-            <h3><br> SAY YES TO NO BROKERAGE: UNLOCK AFFORDABLE RENTAILS <a class="smoothscroll" href="#about"></a>
-             <a class="smoothscroll" href="#about"></a>.<br><br><b><font colour = "red"></font></b></h3>
-            <hr /> 
-            <ul class="social">
-               {% comment %} <li><a href="#"><i class="fa fa-facebook"></i></a></li> {% endcomment %}
-               
-               {% comment %} <li><a href="kamalsoni3839@gmail.com"><i class="fa fa-google-plus"></i></a></li> {% endcomment %}
-               <li><a href="https://www.linkedin.com/company/to-let-globe/"><i class="fa fa-linkedin"></i></a></li>
-               <li><a href="https://instagram.com/to.letofficial?igshid=MzRlODBiNWFlZA=="><i class="fa fa-instagram"></i></a></li>
-               <li><a href="https://twitter.com/tolet0217?t=LlJHAZtZM4CBW1CJayi7Mg&s=08"><i class="fa fa-twitter"></i></a></li>
-               {% comment %} <li><a href="#"><i class="fa fa-dribbble"></i></a></li> {% endcomment %}
-               {% comment %} <li><a href="#"><i class="fa fa-skype"></i></a></li> {% endcomment %}
-            </ul>
-         </div>
+  <!-- Navbar -->
+  <div class="navbar navbar-right">
+    <a href="#" id="brokerage-link">No Brokerage on <span id="swap-text">PGs | Flat | Offices | Shops</span></a>
+    <a href="#">About us | Services | Blogs | Login | Sign up</a>
+  </div>
+  
+  <!-- Main Content -->
+  <div class="container">
+    <div class="company-icon"></div>
+    
+    <div class="icon-container">
+      <div class="icon" id="apartment">
+        <img src="/static/images/appartment.jpg" alt="Apartment">
+        <span class="icon-title">Apartment</span>
       </div>
-      {% comment %} by me {% endcomment %}
-   
-
-      <p class="scrolldown">
-         <a class="smoothscroll" href="#about"><i class="icon-down-circle"></i></a>
-      </p>
-
-   </header> 
-   <center>
-
-   <!-- Header End -->
-
-   <!-- About Section
-   ================================================== -->
-   <section id="about">
-
-      <div class="row">
-
-         <div class="three columns">
-
-            <img class="profile-pic"  src="/static/images/1.jpg" alt="profile" />
-
-         </div>
-<left>
-         <div class="nine columns main-col">
-
-            <h2>Contact Details</h2>
-                  <p class="address">
-						   <span>TO-LET GLOBE</span><br>
-						   <span>Phone No: +91-8707727347<br>
-						         <a href = "mailto: hello@toletglobe.com">Send Email</a>
-                     </span><br>
-              
-
-            </p>
-
-            <div class="row">
-
-               <div class="columns contact-details">
-
-                  
-						   {% comment %} <span>+91 9426827891</span><br> {% endcomment %}
-                     {% comment %} <span>kamalsoni3839@gmail.com</span> {% endcomment %}
-					   </p>
-
-               </div>
-
-            </center>
-
-            </div> <!-- end row -->
-
-         </div> <!-- end .main-col -->
-
+      <div class="icon" id="office">
+        <img src="/static/images/office.webp" alt="Office">
+        <span class="icon-title">Office</span>
       </div>
-
-   </section> <!-- About Section End-->
-
-
-
-   <!-- Contact Section
-   ================================================== -->
-   <section id="contact">
-
-         <div class="row section-head">
-
-            <div class="two columns header-col">
-
-               <h1><span>Get In Touch.</span></h1>
-
-            </div>
-
-            <div class="ten columns">
-
-                  <p class="lead">Thank You For Visiting TO-LET GLOBE <BR>
-                     <a href = "mailto: hello@toletglobe.com">hello@toletglobe.com</a> <BR>
-                  </p>
-
-            </div>
-
-         </div>
-
-         <div class="row">
-
-            <div class="eight columns">
-
-
-               <!-- contact-warning -->
-               <div id="message-warning"> Error boy</div>
-               <!-- contact-success -->
-				   <div id="message-success">
-                  <i class="fa fa-check"></i>Your message was sent, thank you!<br>
-				   </div>
-
-            </div>
-
-
-
-   </section> <!-- Contact Section End-->
-
-
-   <!-- footer
-   ================================================== -->
-   <footer>
-
-      <div class="row">
-
-         <div class="twelve columns">
-
-            <ul class="social-links">
-               {% comment %} <li><a href="#"><i class="fa fa-facebook"></i></a></li> {% endcomment %}
-               
-               {% comment %} <li><a href="kamalsoni3839@gmail.com"><i class="fa fa-google-plus"></i></a></li> {% endcomment %}
-               <li><a href="https://www.linkedin.com/in/kamalsonikgp/"><i class="fa fa-linkedin"></i></a></li>
-               <li><a href="https://www.instagram.com/kamal._.soni/"><i class="fa fa-instagram"></i></a></li>
-               <li><a href="https://twitter.com/kamalsoni3839"><i class="fa fa-twitter"></i></a></li>
-               {% comment %} <li><a href="#"><i class="fa fa-dribbble"></i></a></li> {% endcomment %}
-               {% comment %} <li><a href="#"><i class="fa fa-skype"></i></a></li> {% endcomment %}
-            </ul>
-
-            <ul class="copyright">
-               <li> &copy; Copyright 2023</li>
-               <li>Design by <a title="Styleshout" target="_blank">Kamal Soni</a></li>   
-            </ul>
-
-         </div>
-
-         <div id="go-top"><a class="smoothscroll" title="Back to Top" href="#home"><i class="icon-up-open"></i></a></div>
-
+      <div class="icon" id="godowns">
+        <img src="/static/images/godown.jpg" alt="Godown">
+        <span class="icon-title">Godown</span>
       </div>
+      <div class="icon" id="pgs">
+        <img src="/static/images/pgs.jpg" alt="PG">
+        <span class="icon-title">PG</span>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Search Bar -->
+  <div class="search-bar">
+    <input type="text" placeholder="Search...">
+  </div>
+  <script>
+    // JavaScript code
+    document.addEventListener('DOMContentLoaded', function() {
+      const swapText = document.getElementById('swap-text');
+      const words = swapText.innerText.split(' | ');
+      let currentWordIndex = 0;
 
-   </footer> <!-- Footer End-->
+      setInterval(() => {
+        swapText.innerHTML = words
+          .map((word, index) => {
+            if (index === currentWordIndex) {
+              return `<span style="color: yellow; font-weight: bold;">${word}</span>`;
+            } else {
+              return word;
+            }
+          })
+          .join(' | ');
 
-   <!-- Java Script
-   ================================================== -->
-   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-   <script>window.jQuery || document.write('<script src="/static/js/jquery-1.10.2.min.js"><\/script>')</script>
-   <script type="text/javascript" src="/static/js/jquery-migrate-1.2.1.min.js"></script>
+        currentWordIndex = (currentWordIndex + 1) % words.length;
+      }, 1000);
+    });
 
-   <script src="/static/js/jquery.flexslider.js"></script>
-   <script src="/static/js/waypoints.js"></script>
-   <script src="/static/js/jquery.fittext.js"></script>
-   <script src="/static/js/magnific-popup.js"></script>
-   <script src="/static/js/init.js"></script>
+     // JavaScript code
+     document.addEventListener('DOMContentLoaded', function() {
+      const navbarLinks = document.getElementById('navbar-links');
+      const words = navbarLinks.innerText.split(' | ');
 
+      navbarLinks.innerHTML = words
+        .map((word) => {
+          return `<span>${word}</span>`;
+        })
+        .join(' | ');
+
+      const wordSpans = Array.from(navbarLinks.getElementsByTagName('span'));
+
+      wordSpans.forEach((span) => {
+        span.addEventListener('mouseover', function() {
+          this.style.color = 'yellow';
+        });
+
+        span.addEventListener('mouseout', function() {
+          this.style.color = '';
+        });
+      });
+    });
+  </script>
 </body>
-
 </html>

@@ -38,7 +38,7 @@ def saveform(request):
         contactName=contactName, 
         contactEmail=contactEmail, 
         contactSubject=contactSubject, 
-        contactMessage=contactMessage)
+        contactMessage=contactMessage
         data.save()
         # messages.success('message-success')
         return render(request,"index.html")
