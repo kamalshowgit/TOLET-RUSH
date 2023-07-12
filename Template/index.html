@@ -1,220 +1,82 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>TOLET Globe</title>
-  <style>
-    body {
-      background-color: black;
-      margin: 0;
-      padding: 0;
-    }
-    
-    .container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      height: 100vh;
-    }
-    
-    .company-icon {
-      width: 170px;
-      height: 170px;
-      margin-bottom: 20px;
-      background-image: url('/static/images/1.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      border-radius: 50%;
-    }
-    
-    .icon-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap; /* Allow icons to wrap on smaller screens */
-    }
-    
-    .icon {
-      position: relative;
-      width: 250px;
-      height: 250px;
-      margin: 10px;
-      border-radius: 50%;
-      overflow: hidden;
-    }
-    
-    .icon img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      opacity: 0.5;
-      transition: opacity 0.3s ease;
-    }
-    
-    .icon:hover img {
-      opacity: 1;
-    }
-    
-    .icon-title {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      color: black;
-      font-size: 45px; /* Updated font size */
-      font-weight: bold;
-      text-align: center;
-      transition: color 0.3s ease;
-    }
-    
-    .icon:hover .icon-title {
-      color: yellow;
-    }
-    
-    #apartment {
-      background-image: url('/static/images/appartment.jpg');
-    }
-    
-    #office {
-      background-image: url('/static/images/office.webp');
-    }
-    
-    #godowns {
-      background-image: url('/static/images/godown.jpg');
-    }
-    
-    #pgs {
-      background-image: url('/static/images/pgs.jpg');
-    }
-    
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background-color: #333;
-      padding: 10px;
-      text-align: center;
-      position: sticky;
-      top: 0;
-      z-index: 999;
-    }
-    
-    .navbar a {
-      color: white;
-      text-decoration: none;
-      margin: 8px;
-      font-size: 20px;
-    }
-    
-    .search-bar {
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-      background-color: #333;
-      padding: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: height 0.3s ease;
-      z-index: 999;
-    }
-    
-    .search-bar input {
-      padding: 10px;
-      border-radius: 50px;
-      border: none;
-      font-size: 16px;
-      width: 600px;
-    }
-    
-    .search-bar input:focus {
-      outline: none;
-    }
-    
-    .search-bar .search-icon {
-      color: white;
-      font-size: 20px;
-      margin-left: 10px;
-    }
-    
-    @keyframes searchAnimation {
-      0% {
-        transform: translateY(100%);
-      }
-      100% {
-        transform: translateY(0);
-      }
-    }
-    
-    /* Media queries for responsiveness */
-    @media (max-width: 768px) {
-      .icon-container {
-        flex-direction: column;
-        align-items: center;
-      }
-      
-      .search-bar input {
-        width: 80%;
-      }
-    }
-  </style>
+    <!-- <title>Circular</title> -->
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+    <script src="/static/js/script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
 </head>
 <body>
-  <!-- Navbar -->
-  <div class="navbar navbar-right">
-    <a href="#" id="brokerage-link">No Brokerage on <span id="swap-text">PGs | Flat | Offices | Shops</span></a>
-    <a href="#">About us | Services | Blogs | Login | Sign up</a>
+
+<section id="header" class="header">
+  <div class="logo">
+    <img src="/static/images/logo.jpeg" alt="Circular Logo">
   </div>
-  
-  <!-- Main Content -->
-  <div class="container">
-    <div class="company-icon"></div>
-    
-    <div class="icon-container">
-      <div class="icon" id="apartment">
-        <img src="/static/images/appartment.jpg" alt="Apartment">
-        <span class="icon-title">Apartment</span>
+
+  <div class="object">
+    <img src="/static/images/img1.jpg" alt="Circular Logo">
+  </div>
+
+  <h1>To Let Globe <br>
+    Welcomes You!</h1>
+
+  <h2> Say No To Brokerage</h2>
+
+    <div class="navbar">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
+        <!-- Add more links as needed -->
       </div>
-      <div class="icon" id="office">
-        <img src="/static/images/office.webp" alt="Office">
-        <span class="icon-title">Office</span>
-      </div>
-      <div class="icon" id="godowns">
-        <img src="/static/images/godown.jpg" alt="Godown">
-        <span class="icon-title">Godown</span>
-      </div>
-      <div class="icon" id="pgs">
-        <img src="/static/images/pgs.jpg" alt="PG">
-        <span class="icon-title">PG</span>
-      </div>
+</section>
+
+<section id="about">
+    <div class="about">
+        <h1>About Us</h1>
+        <p> To Let Globe is a platform for the people who are looking for a place to live in. We provide you with the best options available in the market.</p>
     </div>
-  </div>
-  
-  <!-- Search Bar -->
-  <div class="search-bar">
-    <input type="text" placeholder="Search...">
-  </div>
-  <script>
-    // JavaScript code
-    document.addEventListener('DOMContentLoaded', function() {
-      const swapText = document.getElementById('swap-text');
-      const words = swapText.innerText.split(' | ');
-      let currentWordIndex = 0;
+    <div class="gallery">
+        <a href="#">
+          <img src="/static/images/img1.jpg" alt="Cinque Terre" width="600" height="400">
+        </a>
+        <div class="desc">Add a description of the image here</div>
+      </div>
+      
+      <div class="gallery">
+        <a href="#">
+          <img src="/static/images/img1.jpg" alt="Forest" width="600" height="400">
+        </a>
+        <div class="desc">Add a description of the image here</div>
+      </div>
+      
+      <div class="gallery">
+        <a href="#">
+          <img src="/static/images/img1.jpg" alt="Northern Lights" width="600" height="400">
+        </a>
+        <div class="desc">Add a description of the image here</div>
+      </div>
+      
+      <div class="gallery">
+        <a href="#">
+          <img src="/static/images/img1.jpg" alt="Mountains" width="600" height="400">
+        </a>
+        <div class="desc">Add a description of the image here</div>
+      </div>
+</section>
 
-      setInterval(() => {
-        swapText.innerHTML = words
-          .map((word, index) => {
-            if (index === currentWordIndex) {
-              return `<span style="color: yellow; font-weight: bold;">${word}</span>`;
-            } else {
-              return word;
-            }
-          })
-          .join(' | ');
+<section id="search">
+    <h5>Search properties and apartments of your choice</h5>
+    <div class="wrap">
+        <div class="search">
+           <input type="text" class="searchTerm" placeholder="What are you looking for?">
+           <button type="submit" class="searchButton">
+             <i class="fa fa-search"></i>
+          </button>
+        </div>
+     </div>
 
-        currentWordIndex = (currentWordIndex + 1) % words.length;
-      }, 1000);
-    });
-  </script>
+</section>
 </body>
 </html>
